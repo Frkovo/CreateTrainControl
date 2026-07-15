@@ -85,12 +85,12 @@ public class CarriageSoundsMixin {
 		getLoopingsoundsDone = true;
 	}
 
-	public void finalizeSharedVolume(float volume) {
+	public void createTrainControl$finalizeSharedVolume(float volume) {
 		final float crossfade = seatCrossfade.getValue();
 		final Object self = this;
 		final float baseVolume = volume;
 
-		ReflectUtils.safeRun("finalizeSharedVolume", () -> {
+		ReflectUtils.safeRun("createTrainControl$finalizeSharedVolume", () -> {
 			updateLoopingsounds(self);
 
 			float vol = baseVolume;
@@ -302,7 +302,7 @@ public class CarriageSoundsMixin {
 					mainEntity.sounds = new CarriageSounds(mainEntity);
 				mainEntity.sounds.submitSharedSoundVolume(soundLocation, volume);
 				if (carriage != entity.getCarriage()) {
-					finalizeSharedVolume(0);
+					createTrainControl$finalizeSharedVolume(0);
 					return;
 				}
 				break;
