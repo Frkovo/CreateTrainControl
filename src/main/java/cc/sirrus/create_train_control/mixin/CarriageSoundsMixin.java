@@ -123,8 +123,7 @@ public class CarriageSoundsMixin {
 					ordinal = 2
 			),
 			locals = LocalCapture.CAPTURE_FAILHARD,
-			remap = false,
-			priority = 1100
+			remap = false
 	)
 	private void afterSharedWheelSoundSeated(
 			DimensionalCarriageEntity dce,
